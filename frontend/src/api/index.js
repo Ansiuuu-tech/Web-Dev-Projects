@@ -1,8 +1,9 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: `${API_URL}/api`,
   timeout: 15000,
   headers: { 'Content-Type': 'application/json' }
 });
@@ -24,7 +25,7 @@ api.interceptors.response.use(
       const refresh = localStorage.getItem('de_refresh_token');
       if (refresh) {
         try {
-          const { data } = await axios.post('/api/auth/refresh', { refreshToken: refresh });
+          const { data } = await axios.post(`${API_URL}/api/auth/refresh`, { refreshToken: refresh });
           localStorage.setItem('de_access_token', data.data.accessToken);
           original.headers.Authorization = `Bearer ${data.data.accessToken}`;
           return api(original);
