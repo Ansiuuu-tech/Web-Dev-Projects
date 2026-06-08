@@ -62,14 +62,6 @@ npm run dev
 # Frontend → http://localhost:5173
 ```
 
-### 6. Login with seeded accounts
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | admin@donateease.org | Admin@123 |
-| NGO Staff | staff@donateease.org | Staff@123 |
-| Donor | rahul@example.com | Donor@123 |
-| Donor | ananya@example.com | Donor@123 |
-
 ---
 
 ## 🌐 Production Deployment
